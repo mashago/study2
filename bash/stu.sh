@@ -73,10 +73,21 @@ function test2() {
 	test_params 1, 2, 3, 4
 }
 
+function test3() {
+    arr1=(1, 2, 3, 4)
+    echo "arr1[0]=${arr1[0]}"
+    echo "#arr1[@]=${#arr1[@]}"
+    echo "======="
+    for v in ${arr1[@]}; do
+        echo $v
+    done
+}
+
 func_list=(
 	test0
 	test1
 	test2
+	test3
 )
 readonly func_list
 
