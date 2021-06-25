@@ -83,11 +83,120 @@ function test3() {
     done
 }
 
+function test4() {
+    val=`expr 2 + 1`
+    echo "val=$val"
+
+    echo "======="
+
+    a=1
+    b=1
+    c=2
+
+    if [ $a -eq $b ]
+    then
+        echo "a==b"
+    fi
+
+    if [ $a -ne $c ]
+    then
+        echo "a!=c"
+    fi
+
+    if [ $c -gt $a ]
+    then
+        echo "c>a"
+    fi
+
+    if [ $a -lt $c ]
+    then
+        echo "a<c"
+    fi
+
+    if [ $a -ge $b ]
+    then
+        echo "a>=b"
+    fi
+
+    if [ $a -le $b ]
+    then
+        echo "a<=b"
+    fi
+
+    if [ $a != $c ]
+    then
+        echo "a!=c"
+    fi
+
+    if [ ! $a -gt $c ]
+    then
+        echo "!a>c"
+    fi
+
+    echo "======="
+
+    if [ $a -eq $b -o $a -eq $c ]
+    then
+        echo "a==b or a=c"
+    fi
+
+    if [ $a -eq $b -a $a -ne $c ]
+    then
+        echo "a==b and a!=c"
+    fi
+
+    if [[ $a -eq $b || $a -eq $c ]]
+    then
+        echo "a==b || a=c"
+    fi
+
+    if [[ $a -eq $b && $a -ne $c ]]
+    then
+        echo "a==b && a!=c"
+    fi
+
+    echo "======="
+
+    str1="abc"
+    str2="abc"
+    str3="efg"
+    str4=""
+
+    if [ $str1 == $str2 ]
+    then
+        echo "str1==str2"
+    fi
+
+    if [ $str1 != $str3 ]
+    then
+        echo "str1!=str3"
+    fi
+
+    if [ -z $str4 ]
+    then
+        echo "len(str4)==0"
+    fi
+
+    if [ -n $str1 ]
+    then
+        echo "len(str1)!=0"
+    fi
+
+    if [ $str4 ]
+    then
+        echo "str4 not empty"
+    else
+        echo "str4 empty"
+    fi
+
+}
+
 func_list=(
 	test0
 	test1
 	test2
 	test3
+	test4
 )
 readonly func_list
 
